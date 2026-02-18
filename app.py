@@ -60,8 +60,9 @@ CUSTOMERS = {
 
 class DeliveryResponse(BaseModel):
     customer_name: str
-    delivery_address: str
+    last_location: str
     delivery_date: str
+
 
 @app.get("/delivery/", response_model=DeliveryResponse)
 def get_delivery(customer_name: str = Query(..., description="Name of the customer")):
@@ -73,6 +74,7 @@ def get_delivery(customer_name: str = Query(..., description="Name of the custom
         last_location=info["address"],
         delivery_date=info["delivery_date"],
     )
+
 
 @app.get("/customers")
 def list_customers():
