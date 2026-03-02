@@ -44,15 +44,23 @@ class DeliveryResponse(BaseModel):
     delivery_date: str
 
 
-@app.get("/delivery/", response_model=DeliveryResponse)
-def get_delivery(customer_name: str = Query(..., description="Name of the customer")):
-    if customer_name not in CUSTOMERS:
-        raise HTTPException(status_code=404, detail=f"Customer '{customer_name}' not found")
-    info = CUSTOMERS[customer_name]
-    return DeliveryResponse(
-        customer_name=customer_name,
-        last_location=info["address"],
-        delivery_date=info["delivery_date"],
+@app.get("/delivery", response_model=DeliveryResponse)
+def get_delivery(
+    customer_name: str = Query(..., description="Customer name")
+):
+    normalized = customer_name.strip().lower()
+
+    for name, info in CUSTOMERS.items():
+        if name.lower() == normalized:
+            return DeliveryResponse(
+                customer_name=name,
+                delivery_address=info["address"],
+                delivery_date=info["delivery_date"],
+            )
+
+    raise HTTPException(
+        status_code=404,
+        detail=f"Customer '{customer_name}' not found"
     )
 
 
