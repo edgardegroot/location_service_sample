@@ -30,7 +30,7 @@ CUSTOMERS = {
     "Zimmermann": {"address": "DHL Freight Center, Lise-Meitner-Straße 5, 30179 Hannover"},
     "Hartmann": {"address": "DHL Packstation 106, Bismarckstraße 10, 04109 Leipzig"},
     "Meier": {"address": "DHL Paketshop, Leopoldstraße 64, 80802 München"},
-    "de Groot": {"address": "DHL Paketshop, Coolsingel 45, 3012 AD Rotterdam"},
+    "Degroot": {"address": "DHL Paketshop, Coolsingel 45, 3012 AD Rotterdam"},
 }
 
 # Attach random delivery dates (within the range)
