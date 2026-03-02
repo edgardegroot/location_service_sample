@@ -54,7 +54,7 @@ def get_delivery(
         if name.lower() == normalized:
             return DeliveryResponse(
                 customer_name=name,
-                delivery_address=info["address"],
+                delivery_address=info["last_location"],
                 delivery_date=info["delivery_date"],
             )
 
