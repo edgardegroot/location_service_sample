@@ -36,6 +36,7 @@ CUSTOMERS = {
     "Hartmann": {"last_location": "DHL Packstation 106, Bismarckstraße 10, 04109 Leipzig"},
     "Meier": {"last_location": "DHL Paketshop, Leopoldstraße 64, 80802 München"},
     "Degroot": {"last_location": "DHL Paketshop, Coolsingel 45, 3012 AD Rotterdam"},
+    "Edgar": {"last_location": "DHL Packstation 102, Zeppelinstraße 1, 70372 Stuttgart"},
 }
 
 # Attach random delivery dates
